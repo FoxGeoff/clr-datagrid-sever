@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClrDatagridStateInterface } from '@clr/angular';
 
 @Component({
   selector: 'app-datagrid',
