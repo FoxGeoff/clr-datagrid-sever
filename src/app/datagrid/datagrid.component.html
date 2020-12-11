@@ -1,1 +1,50 @@
 <p>datagrid works!</p>
+<div class="main-container">
+	<header class="header-2">
+		<div class="branding">
+			<a class="nav-link">
+				<clr-icon shape="home" size="24"></clr-icon>
+				<span class="title">Project Clarity</span>
+			</a>
+		</div>
+		<div class="header-nav">
+			<a class="active nav-link nav-text">Home</a>
+		</div>
+	</header>
+	<div class="content-container">
+		<div class="content-area">
+    <h2>Datagrid With Pagination</h2>
+
+    <clr-datagrid (clrDgRefresh)="refresh($event)" [clrDgLoading]="loading">
+        <clr-dg-column>User ID</clr-dg-column>
+        <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
+        <clr-dg-column [clrDgField]="'creation'">Creation date</clr-dg-column>
+        <clr-dg-column [clrDgField]="'pokemon'">Pokemon</clr-dg-column>
+        <clr-dg-column>
+          Favorite color
+            <clr-dg-filter [clrDgFilter]="colorFilter">
+              <clr-datagrid-color-filter-demo #colorFilter class="color-filter">
+              </clr-datagrid-color-filter-demo>
+            </clr-dg-filter>
+        </clr-dg-column>
+
+        <clr-dg-row *ngFor="let user of users">
+            <clr-dg-cell>{{user.id}}</clr-dg-cell>
+            <clr-dg-cell>{{user.name}}</clr-dg-cell>
+            <clr-dg-cell>{{user.creation | date}}</clr-dg-cell>
+            <clr-dg-cell>{{user.pokemon.name}}</clr-dg-cell>
+            <clr-dg-cell>
+                <span class="color-square" [style.backgroundColor]="user.color"></span>
+            </clr-dg-cell>
+        </clr-dg-row>
+
+        <clr-dg-footer>
+            <clr-dg-pagination #pagination #pagination [clrDgPageSize]="10" [(clrDgPage)]="page"  [clrDgTotalItems]="total">
+                <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">Users per page</clr-dg-page-size>
+                {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} users
+            </clr-dg-pagination>
+        </clr-dg-footer>
+    </clr-datagrid>
+		</div>
+	</div>
+</div>
