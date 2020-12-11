@@ -1,12 +1,12 @@
-import {Pokemon} from "../pokemon";
+import { Pokemon } from '../pokemon/pokemon';
 
 export interface User {
-    id: number;
-    name: string;
-    creation: Date;
-    color: string;
-    pokemon: Pokemon;
+  id: number;
+  name: string;
+  creation: Date;
+  color: string;
+  pokemon: Pokemon;
 
-    // Type for dynamic access to specific properties
-    [key: string]: any;
+  // Type for dynamic access to specific properties
+  [key: string]: any;
 }
