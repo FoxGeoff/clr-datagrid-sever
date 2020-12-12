@@ -18,6 +18,6 @@
   opacity: 0.2;
 }
 
-.color-selectable::hover, .color-selectable::.color-selected {
+.color-selectable:hover, .color-selectable::color-selected {
   opacity: 1;
 }
