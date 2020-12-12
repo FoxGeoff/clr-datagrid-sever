@@ -1,8 +1,8 @@
-import {ClrDatagridStringFilterInterface} from "@clr/angular";
+import {ClrDatagridComparatorInterface} from "@clr/angular";
 import {User} from "../inventory/user";
 
-export class PokemonFilter implements ClrDatagridStringFilterInterface<User> {
-    accepts(user: User, search: string): boolean {
-        return "" + user.pokemon.number === search || user.pokemon.name.toLowerCase().indexOf(search) >= 0;
+export class PokemonComparator implements ClrDatagridComparatorInterface<User> {
+    compare(a: User, b: User) {
+        return a.pokemon.number - b.pokemon.number;
     }
 }
