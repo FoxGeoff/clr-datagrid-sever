@@ -44,7 +44,7 @@ export class Inventory {
           getFilterProperty = (user: User) => user.pokemon.name;
         }
 
-        const lowerCase = filters[key].map(value => value.toLowerCase());
+        const lowerCase = filters[key].map(value => value.toLowerCase()); // error
         this._currentQuery = this._currentQuery.filter(user => {
           for (const value of lowerCase) {
             if (getFilterProperty(user).toLowerCase().indexOf(value) >= 0) {
