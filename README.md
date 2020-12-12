@@ -5,3 +5,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Task: Add Clarity Design
 
 1. Run: ```ng add @clr/angular```
+
+## Notes: All working except the color filter <=== TODO
