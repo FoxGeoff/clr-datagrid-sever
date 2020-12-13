@@ -22,8 +22,6 @@ export class ColorFilterComponent implements ClrDatagridStringFilterInterface<Us
 
     constructor(){}
 
-    onI
-
     listSelected(): string[] {
         const list: string[] = [];
         for (const color in this.selectedColors) {
